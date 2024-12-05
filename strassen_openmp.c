@@ -51,7 +51,7 @@ void strassen_multiply(int* A, int* B, int* C, int n, int s) {
     int new_size = n/2;
 
     //allocate memory for the intermediate M1 - M7
-    //[C11 C12; C21 C22] = [M1+M4-M5+M7, M3 + M5; M2 + M4, M1 - M2 + M3 + M6]
+    //[C11 C12; C21 C22] = [M1+M4-M5+M7, M3+M5; M2+M4,M1-M2+M3+M6]
     int* M1 = allocate_matrix(new_size);
     int* M2 = allocate_matrix(new_size);
     int* M3 = allocate_matrix(new_size);

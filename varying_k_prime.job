@@ -1,0 +1,22 @@
+#!/bin/bash
+#SBATCH --export=NONE
+#SBATCH --get-user-env=L
+#SBATCH --job-name=VaryKPrime
+#SBATCH --time=0:30:00
+#SBATCH --nodes=1
+#SBATCH --ntasks-per-node=8
+#SBATCH --mem=16G
+#SBATCH --output=vary_k_prime.log
+
+module load intel/2022a
+
+for K_PRIME in {0..10}; do
+    CMD="./strassen_openmp_final 10 $K_PRIME 5"
+    echo "Running: $CMD"
+    START_TIME=$(date +%s.%N)
+    eval $CMD
+    END_TIME=$(date +%s.%N)
+    ELAPSED_TIME=$(echo "$END_TIME - $START_TIME" | bc)
+    echo "Execution time for '$CMD': $ELAPSED_TIME seconds"
+    echo "------------------------------------------------"
+done

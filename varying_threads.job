@@ -1,0 +1,22 @@
+#!/bin/bash
+#SBATCH --export=NONE
+#SBATCH --get-user-env=L
+#SBATCH --job-name=VaryThreads
+#SBATCH --time=0:20:00
+#SBATCH --nodes=1
+#SBATCH --ntasks-per-node=16
+#SBATCH --mem=16G
+#SBATCH --output=vary_threads.log
+
+module load intel/2022a
+
+for THREADS in {0..10}; do
+    CMD="./strassen_openmp_final 10 7 $THREADS"
+    echo "Running: $CMD"
+    START_TIME=$(date +%s.%N)
+    eval $CMD
+    END_TIME=$(date +%s.%N)
+    ELAPSED_TIME=$(echo "$END_TIME - $START_TIME" | bc)
+    echo "Execution time for '$CMD': $ELAPSED_TIME seconds"
+    echo "------------------------------------------------"
+done

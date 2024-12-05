@@ -1,0 +1,46 @@
+# Parallelizing Strassen’s Matrix-Multiplication Algorithm
+
+### Project Title
+**CSCE 735 Major Project**  
+**Parallelizing Strassen’s Matrix-Multiplication Algorithm**  
+**Author:** Tarek Bessalah  
+
+---
+
+### Overview
+This project implements the Strassen Matrix Multiplication algorithm using shared-memory parallelism with OpenMP. Strassen’s algorithm optimizes the standard matrix multiplication's \( O(n^3) \) complexity to \( O(n^{2.8}) \) by reducing the number of multiplications required.
+
+The algorithm uses a **divide-and-conquer approach**, recursively dividing larger matrices into smaller submatrices, performing computations on the submatrices, and combining the results to form the final product. For smaller matrix sizes, a standard multiplication method is used to terminate the recursion efficiently.
+
+---
+
+### Methodology
+1. **Divide-and-Conquer:** Matrices are recursively divided into smaller submatrices until the size \( s \times s \), derived from \( k' \), is reached.
+2. **Intermediate Calculations:** Seven intermediate matrices (\( M1 \) to \( M7 \)) are computed using combinations of matrix additions and subtractions.
+3. **Recursive Termination:** Standard matrix multiplication is used for matrices smaller than \( s \times s \).
+4. **Parallelism with OpenMP:** Parallel computation is applied to optimize additions, subtractions, and multiplications.
+5. **Validation:** Results from Strassen’s algorithm are compared with the standard method to ensure correctness.
+
+---
+
+### Design Choices
+- The implementation uses dynamically allocated matrices for intermediate results, minimizing redundant calculations.
+- Recursive calls terminate when the matrix size reaches \( s \times s \), balancing overhead and recursion depth.
+- OpenMP parallelism is applied to addition, subtraction, and multiplication operations, optimizing performance for larger matrices.
+
+---
+
+### Results
+- **Varying Number of Threads:** Speedup is observed up to a certain point, after which diminishing returns occur due to memory allocation and recursive overhead.
+- **Varying \( k' \):** Performance improves with smaller \( k' \) (more recursion) up to a point where overhead outweighs benefits.
+- **Varying Matrix Size:** For larger matrices, Strassen’s algorithm outperforms the standard \( O(n^3) \) approach in execution time.
+
+---
+
+### Compilation and Execution
+
+```bash
+module load intel
+gcc -fopenmp -O3 -o strassen_openmp strassen_openmp.c
+./strassen_openmp_final <k> <k_prime> <num_threads>
+```

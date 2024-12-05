@@ -1,0 +1,53 @@
+Running: ./strassen_openmp_final 10 0 5
+k_prime must be 1 <= k_prime < k
+Execution time for './strassen_openmp_final 10 0 5': .131922521 seconds
+------------------------------------------------
+Running: ./strassen_openmp_final 10 1 5
+Strassen's multiplication time: 0.674161 seconds
+Standard multiplication time: 0.845757 seconds
+Execution time for './strassen_openmp_final 10 1 5': 1.576906648 seconds
+------------------------------------------------
+Running: ./strassen_openmp_final 10 2 5
+Strassen's multiplication time: 0.375600 seconds
+Standard multiplication time: 0.845190 seconds
+Execution time for './strassen_openmp_final 10 2 5': 1.290600751 seconds
+------------------------------------------------
+Running: ./strassen_openmp_final 10 3 5
+Strassen's multiplication time: 0.453231 seconds
+Standard multiplication time: 0.845410 seconds
+Execution time for './strassen_openmp_final 10 3 5': 1.367420378 seconds
+------------------------------------------------
+Running: ./strassen_openmp_final 10 4 5
+Strassen's multiplication time: 0.445352 seconds
+Standard multiplication time: 0.845291 seconds
+Execution time for './strassen_openmp_final 10 4 5': 1.359108068 seconds
+------------------------------------------------
+Running: ./strassen_openmp_final 10 5 5
+Strassen's multiplication time: 1.922639 seconds
+Standard multiplication time: 0.846266 seconds
+Execution time for './strassen_openmp_final 10 5 5': 2.840502140 seconds
+------------------------------------------------
+Running: ./strassen_openmp_final 10 6 5
+Strassen's multiplication time: 2.675288 seconds
+Standard multiplication time: 0.846478 seconds
+Execution time for './strassen_openmp_final 10 6 5': 3.585445855 seconds
+------------------------------------------------
+Running: ./strassen_openmp_final 10 7 5
+Strassen's multiplication time: 6.238375 seconds
+Standard multiplication time: 0.847086 seconds
+Execution time for './strassen_openmp_final 10 7 5': 7.157417296 seconds
+------------------------------------------------
+Running: ./strassen_openmp_final 10 8 5
+Strassen's multiplication time: 32.883574 seconds
+Standard multiplication time: 0.846073 seconds
+Execution time for './strassen_openmp_final 10 8 5': 33.799744258 seconds
+------------------------------------------------
+Running: ./strassen_openmp_final 10 9 5
+Strassen's multiplication time: 222.546012 seconds
+Standard multiplication time: 0.846581 seconds
+Execution time for './strassen_openmp_final 10 9 5': 223.460732050 seconds
+------------------------------------------------
+Running: ./strassen_openmp_final 10 10 5
+k_prime must be 1 <= k_prime < k
+Execution time for './strassen_openmp_final 10 10 5': .012781810 seconds
+------------------------------------------------
